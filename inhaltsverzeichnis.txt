@@ -1,0 +1,20 @@
+Homomorphe Verschlüsselung
+- Mathematische Definitionen und Erklärungen
+- Was ist das überhaupt? (inkl Beispiel)
+- Geschichte, Warum, braucht mans eigentlich.
+- Teilhomomorphe Verschlüsselungen
+  - CEASAR, RSA 
+- Vollhomomorphe Verschlüsselungen
+  - Craig Gentry (Gitter-basierte Kryptographie) (engl Lattice-based)
+- Anwendungen
+  - in der Cloud
+  - mit E-Voting
+- Vorteile 
+- Schlussfolgerungen
+
+
+
+Quellen
+https://www.ontrack.com/de/blog/ein-neues-potenzial-fuer-die-kryptographie/6246
+https://dl.gi.de/bitstream/handle/20.500.12116/16282/sicherheit2018-17.pdf?sequence=1
+https://github.com/dbsec/FamilyGuard/
