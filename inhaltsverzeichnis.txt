@@ -3,15 +3,21 @@ Homomorphe Verschlüsselung
 - Mathematische Definitionen und Erklärungen
 - Geschichte, Warum, braucht mans eigentlich.
 - Teilhomomorphe Verschlüsselungen
-  - zb. RSA 
+  - zb. RSA (Padded RSA - grundlegend)
+  - Goldwasser
+  - Piere
 - Vollhomomorphe Verschlüsselungen
-  - Craig Gentry (Gitter-basierte Kryptographie) (engl Lattice-based)
+  - technische Unterschiede und Entwicklungen zu Teilhomomorphie
+  -  Craig Gentry (Gitter-basierte Kryptographie) (engl Lattice-based) 
 - Anwendungen
   - in der Cloud
   - mit E-Voting
 - Vorteile / Schwierigkeiten 
 - Schlussfolgerungen
 
+
+Praktisches (potnzielles) Bespiel:
+ - E-Voting
 
 
 Quellen
