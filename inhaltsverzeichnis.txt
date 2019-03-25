@@ -18,7 +18,7 @@ Homomorphe Verschlüsselung
 
 Praktisches (potnzielles) Bespiel:
  - E-Voting
-
+Präsentationsdauer: 45 min total
 
 Quellen
 https://www.ontrack.com/de/blog/ein-neues-potenzial-fuer-die-kryptographie/6246
