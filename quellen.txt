@@ -2,5 +2,7 @@ mögliche Quellen
 https://www.wiso-net.de/document/PMGC__20160305160305132
 https://link.springer.com/content/pdf/10.1007%2Fs11623-015-0465-x.pdf
 https://www.degruyter.com/downloadpdf/j/cr.2012.28.issue-1/cr.2012.28.1.60/cr.2012.28.1.60.pdf
-
+https://www.ontrack.com/de/blog/ein-neues-potenzial-fuer-die-kryptographie/6246
+https://dl.gi.de/bitstream/handle/20.500.12116/16282/sicherheit2018-17.pdf?sequence=1
+https://github.com/dbsec/FamilyGuard/
 
