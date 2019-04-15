@@ -24,3 +24,4 @@ Quellen
 https://www.ontrack.com/de/blog/ein-neues-potenzial-fuer-die-kryptographie/6246
 https://dl.gi.de/bitstream/handle/20.500.12116/16282/sicherheit2018-17.pdf?sequence=1
 https://github.com/dbsec/FamilyGuard/
+
