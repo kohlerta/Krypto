@@ -1,0 +1,46 @@
+Was ist eine Vollhomomorphe Verschlüsselung?
+Eine Verschlüsselung, die beliebige Operationen auf einem Ciphertext erlaubt.
+
+Erstes System von Craig Gentry, im Jahr 2009
+es ist praktisch nicht nutzbar, da nach 30 Operationen sind die Daten nicht mehr sauber ( wort fehlt mir da) 
+
+inzwischen werden die meisten Systeme mit LWE (Learing with errors implementiert)
+indem eine oder mehrere Teilhomomorphe Verschlüsselungen verwendet werden und diese dann immer wieder korrigiert werden.
+
+Einen relativ aktuellen Algorithmus basierend auf verschiedenen Teilhomomorphen Verschlüsselungen der 2018 publiziert wurde.
+[[New Fully Homomorphic Encryption Scheme Based on Multistage Partial Homomorphic Encryption Applied in Cloud Computing]]
+
+Algorithmus
+  1. lade Plaintext
+  2. konvertiere in binary
+  3. wähle zufällige große Primzahlen P,Q
+  4. Verschlüssle mittels GM (Goldwasser-Micali) um C1 zuerhalten
+  5. Berechne Key für RSA
+  6. Verschlüssle mittels RSA um C2 zu erhalten
+  7. Lade die verschlüsselten Daten auf die Cloud und führe additionen und Multiplikationen durch
+  8. Entschlüssle zuerst C2 mittels RSA und erhalte C1
+  9. Entschlüssle C1 um die Daten zu erhalten.
+
+Die Laufzeit für den Algorithmus ist im Vergleich zu Craigs Algorithmus sehr gut.
+
+Probleme
+  sehr aufwendig und kompliziert
+  sehr hohe Rechenleistung Gentry 
+
+
+RSA-Alg
+  Key-Generation
+    1. Private und Public Key kreieren basierend auf P,Q (große Primzahlen), berechne N = P*Q, Eulersche Phi-Funktion phi(N) = (P-1)(Q-1)
+    2. Wähle E zufällig, mit 1<E<phi(N) und E und phi(N) sind teilerfremd
+    3. public-key: (E,N), private Key = (D,P,Q)
+
+  Encryption
+    1. verwende (E,N) um zu verschlüsseln
+    2. Berechne cipher text C = M^E mod N (wobei 0 <= M)
+
+  Decryption
+    1. verwende (D,P,Q)
+    2. berechne M = CD mod N
+
+Quellen
+[[https://www.semanticscholar.org/paper/New-Fully-Homomorphic-Encryption-Scheme-Based-on-in-Mahmood-Ibrahem/799b149074bdfa1fcd9b15a401ac79ed34dfddb8]]

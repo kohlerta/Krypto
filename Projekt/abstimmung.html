@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Abstimmung</title>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- jQuery boilerplate code -->
+    <script type="text/javascript">
+      $(function(){
+        console.log('jQuery: Page loading complete!');
+      });
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- External resources -->
+  </head>
+  <body>
+    <form autocomplete="off" method="post" onsubmit="">
+      <h2>Europawahl 2019</h2>
+      <label>Wie hast du gewählt?</label>
+      <label><input type="radio" name="radio" value="0">Wahllokal</label>
+      <label><input type="radio" name="radio" value="1">Briefwahl</label>
+      <label><input type="radio" name="radio" value="2">gar nicht</label>
+      <label for="wahl">Was hast du gewählt</label>
+      <select name="wahl">
+        <option value="0">- ungültig -</option>
+        <option value="1">ÖVP</option>
+        <option value="2">SPÖ</option>
+        <option value="3">FPÖ</option>
+        <option value="4">GRÜNE</option>
+        <option value="5">NEOS</option>
+        <option value="6">EUROPA</option>
+        <option value="7">KPÖ</option>
+      </select>
+      <input type="submit" value="abstimmen">
+    </form>
+  </body>
+</html>
