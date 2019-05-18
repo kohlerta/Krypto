@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from Crypto.Random import random
+import random
 import crypt
 
 def e_voting_simulation(kandi, cnt_voter):
