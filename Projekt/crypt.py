@@ -5,6 +5,7 @@ import math
 import random
 
 #basiert auf https://en.wikibooks.org/wiki/Algorithm_Implementation/Mathematics/Extended_Euclidean_algorithm
+
 def egcd(a, b):
   if a == 0:
     return (b,0,1)
@@ -28,6 +29,16 @@ class PrivateKey(object):
   def __repr__(self):
     return '<PrivateKey: %s %s>' %(self.l, self.m)
 
+  def save(self):
+    priv = open(".PRIV_KEY", "w+")
+    priv.write("%s %s"%(self.l, self.m))
+
+  def load(self):
+    priv = open(".PRIV_KEY", "r")
+    values = priv.read().split()    
+    self.l = values[0]
+    self.m = values[1]
+
 class PublicKey(object):
   def from_n(cls, n):
     return cls.n
@@ -37,8 +48,19 @@ class PublicKey(object):
     self.sq_n = n*n
     self.g = n + 1
 
+  def save(self):
+    pub = open(".PUB_KEY", "w+")
+    pub.write(str(self.n))
+
+  def load(self):
+    pub = open(".PUB_KEY", "r")
+    self.n = pub.read()
+    self.sq_n = n*n
+    self.g = n + 1
+
   def __repr__(self):
-   return '<PublicKey: %s &s %s>' %(self.n, self.sq_n, self.g)
+   return "<PublicKey: %s &s %s>"%(self.n, self.sq_n, self.g)
+
 
 def generate_keypairs(bitlength):
   assert bitlength >= 16 # aufgrund von primes.generate_prime
