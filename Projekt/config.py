@@ -1,10 +1,12 @@
 #!/usr/bin/phython
 
-KANDIDATEN = ["OEVP","SPOE","FPOE", "GRUENE", "NEOS", "EUROPA", "KPOE"]
+VOTEE = ["ÖVP","SPÖ","FPÖ", "GRÜNE", "NEOS", "EUROPA", "KPÖ"]
 
-ANZAHL_KANDI = len(KANDIDATEN)
-ANZAHL_VOTER = 30
+CNT_VOTEE = len(VOTEE)
+CNT_VOTER = 8000000
 
-# MIN_PAILLIER_KEY_SIZE = 1024 sollte sein, dauert aber zu lang zu test zwecken
+KEY_SIZE = 128 # sollte 1024 sein, dauert aber zu lang zu test zwecken
 
+#if CNT_VOTEE * CNT_VOTER > KEY_SIZE:
+#  KEY_SIZE = CNT_VOTEE * CNT_VOTER
 
