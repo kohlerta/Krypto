@@ -1,56 +1,55 @@
 #!/usr/bin/python
 
+from config import * 
 import random
 import crypt
+import math
 
-def e_voting_simulation(kandi, cnt_voter):
+def e_voting_simulation():
   
-  kand_votes = [0] * len(kandi)
+  plain_votes = [0] * CNT_VOTEE
   
-  bits_pro_kandi = cnt_voter.bit_length()
-  
-  key_size = 16 # sollte eigentlich mind 1024 sein
-  if len(kandi) * bits_pro_kandi > 16:
-    key_size = len(kandi) * bits_pro_kandi
+  bitlength_cnt_voter = CNT_VOTER.bit_length()
 
-  prk, puk = crypt.generate_keypairs(key_size)
+  priv, pub = crypt.generate_keypairs(KEY_SIZE)
 
   init = 0
-  c = crypt.encrypt(puk, init)
-  d = crypt.decrypt(prk, puk, c)
+  c = crypt.encrypt(pub, init)
+  d = crypt.decrypt(priv, pub, c)
 
-  for i in range(cnt_voter):
-    r = random.randint(0, len(kandi) - 1)
-    kand_votes[r] += 1
+  for i in range(CNT_VOTER): # pro voter an random votee plus eine stimme
+    r = random.randint(0, CNT_VOTEE - 1)
+    plain_votes[r] += 1
 
-    vote = 1 << (r * bits_pro_kandi)
+    vote = 1 << (r * bitlength_cnt_voter)
     
-    e_vote = crypt.encrypt(puk, vote)
-    c = crypt.sum(puk, c, e_vote)
+    e_vote = crypt.encrypt(pub, vote)
+    c = crypt.sum(pub, c, e_vote)
 
-  d = crypt.decrypt(prk,puk, c)
+  d = crypt.decrypt(priv, pub, c)
   
   print("Ergebnis:")
   
-  votes = [0] * len(kandi)
-  mask = pow(2, bits_pro_kandi) - 1
+  votes = [0] * CNT_VOTEE
+  mask = pow(2, bitlength_cnt_voter) - 1 
   
-  for i in range(len(kandi)):
-    v = (d >> (i * bits_pro_kandi)) & mask
+  for i in range(CNT_VOTEE):
+    v = (d >> (i * bitlength_cnt_voter)) & mask
     votes[i] = v
 
-  if not kand_votes == votes:
+  if not plain_votes == votes:
     print("error: arithmetischer fehler")
 
   max = 0
-  for i in range(len(kandi)):
-    print("%s hat %d Stimmen (plain: %d)"%(kandi[i], votes[i], kand_votes[i]))
+  for i in range(CNT_VOTEE):
+    print("%s hat %.2f Prozent (Stimmen: %d)"%(VOTEE[i], round(votes[i]/CNT_VOTER*100,2), votes[i]))
     if votes[max] < votes[i]:
       max = i
 
   print("")
-  print("Die meisten Stimmen hat %s"%kandi[max])
+  print("Die meisten Stimmen hat %s"%VOTEE[max])
+  
 
 
-e_voting_simulation(["ÖVP","SPÖ","FPÖ", "GRÜNE", "NEOS", "EUROPA", "KPÖ"], 100)
+e_voting_simulation()
 
